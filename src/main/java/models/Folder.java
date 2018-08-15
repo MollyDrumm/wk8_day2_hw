@@ -16,6 +16,7 @@ public class Folder {
 
     public Folder(String title) {
         this.title = title;
+
     }
     @Id
     @GeneratedValue( strategy = GenerationType.IDENTITY)

@@ -2,14 +2,13 @@ import db.DBHelper;
 import models.File;
 import models.Folder;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Runner {
 
 
     public static void main(String[] args) {
-
-
 
         Folder folder1 = new Folder("Folder1");
         DBHelper.save(folder1);
@@ -25,7 +24,15 @@ public class Runner {
         File file4 = new File("File4", "ppt", 3, folder1);
         DBHelper.save(file1);
 
-        List<File> files = DBHelper.getAll(File.class);
+        ArrayList<File> files = new ArrayList<File>();
+        files.add(file1);
+        files.add(file2);
+
+
+
+
+
+        List<File> foundFiles = DBHelper.getAll(File.class);
 
         List<Folder> foulders = DBHelper.getAll(Folder.class);
 
